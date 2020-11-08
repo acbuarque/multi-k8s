@@ -12,7 +12,7 @@ before_install:
   - gcloud components update kubectl
   - gcloud auth activate-service-account --key-file travis-deployer.json
   - gcloud config set project learning-k8s-294918
-  - gcloud config set compute/zone us-central1-a
+  - gcloud config set compute/zone us-central1-c
   - gcloud container clusters get-credentials  multi-cluster
   - echo "$DOCKER_PASSWORD" | doker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t animal505/react-test -f ./client/Dockerfile.dev ./client
